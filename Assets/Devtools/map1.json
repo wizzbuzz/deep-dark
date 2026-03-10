@@ -1,0 +1,15 @@
+{
+    "mapElements": [
+        {
+            "name": "joe",
+
+            "rotationX": "0",
+            "rotationY": "0",
+            "rotationZ": "0",
+
+            "locationX": "0",
+            "locationY": "0",
+            "locationZ": "0"
+        }
+    ]
+}

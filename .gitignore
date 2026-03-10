@@ -1,0 +1,35 @@
+# VS / IDE
+/.vs
+/.vscode
+
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Bb]uild/
+[Bb]uilds/
+[Mm]emory[Cc]aptures/
+[Uu]ser[Ss]ettings/
+
+# Auto-generated project files
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.VC.db
+
+# Build artifacts
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Python venv
+.venv/

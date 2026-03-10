@@ -1,0 +1,24 @@
+{
+    "tiles": [
+        {
+            "obj": "Open",
+            "opens": [true, true, true, true]
+        },
+        {
+            "obj": "T-Split",
+            "opens": [true, true, false, true]
+        },
+        {
+            "obj": "Dead end",
+            "opens": [false, true, false, false]
+        },
+        {
+            "obj": "Corridor",
+            "opens": [false, true, false, true]
+        },
+        {
+            "obj": "Corner",
+            "opens": [true, true, false, false]
+        }
+    ]
+}

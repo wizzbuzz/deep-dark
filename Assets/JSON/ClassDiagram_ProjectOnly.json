@@ -1,0 +1,3094 @@
+{
+    "classes": [
+        {
+            "namespace": "Global",
+            "name": "CameraPosition",
+            "fullName": "CameraPosition",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Update",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "cameraPos",
+                    "type": "Transform",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "ClassDiagramGenerator",
+            "fullName": "ClassDiagramGenerator",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "GenerateDiagram",
+                    "returnType": "ClassDiagram",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "types",
+                            "type": "Type[]",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "ExtractClassInfo",
+                    "returnType": "ClassEntry",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "type",
+                            "type": "Type",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "ExtractInterfaceInfo",
+                    "returnType": "InterfaceEntry",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "type",
+                            "type": "Type",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "GetFriendlyTypeName",
+                    "returnType": "String",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "type",
+                            "type": "Type",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "GetPropertyVisibility",
+                    "returnType": "String",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "property",
+                            "type": "PropertyInfo",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "GetFieldVisibility",
+                    "returnType": "String",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "field",
+                            "type": "FieldInfo",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "GetMethodVisibility",
+                    "returnType": "String",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "method",
+                            "type": "MethodInfo",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "GenerateFromAllAssemblies",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "GenerateFromProjectAssemblies",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "GenerateAndSave",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "types",
+                            "type": "Type[]",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "outputPath",
+                            "type": "String",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                }
+            ],
+            "fields": []
+        },
+        {
+            "namespace": "Global",
+            "name": "ClassDiagram",
+            "fullName": "ClassDiagramGenerator+ClassDiagram",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "classes",
+                    "type": "List<ClassEntry>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "interfaces",
+                    "type": "List<InterfaceEntry>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "ClassEntry",
+            "fullName": "ClassDiagramGenerator+ClassEntry",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "namespace",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "fullName",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "baseClass",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "interfaces",
+                    "type": "List<String>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isAbstract",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isSealed",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isStatic",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "properties",
+                    "type": "List<PropertyEntry>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "methods",
+                    "type": "List<MethodEntry>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "fields",
+                    "type": "List<FieldEntry>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "InterfaceEntry",
+            "fullName": "ClassDiagramGenerator+InterfaceEntry",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "namespace",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "name",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "fullName",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "baseInterfaces",
+                    "type": "List<String>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "properties",
+                    "type": "List<PropertyEntry>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "methods",
+                    "type": "List<MethodEntry>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "PropertyEntry",
+            "fullName": "ClassDiagramGenerator+PropertyEntry",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "visibility",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "canRead",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "canWrite",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isAbstract",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "MethodEntry",
+            "fullName": "ClassDiagramGenerator+MethodEntry",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "returnType",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "visibility",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isAbstract",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isVirtual",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isStatic",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "parameters",
+                    "type": "List<ParameterEntry>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "ParameterEntry",
+            "fullName": "ClassDiagramGenerator+ParameterEntry",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isOut",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isRef",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isParams",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "FieldEntry",
+            "fullName": "ClassDiagramGenerator+FieldEntry",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "type",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "visibility",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isStatic",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isReadOnly",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "CoinDistribution",
+            "fullName": "CoinDistribution",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "DistributeCoins",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "GetRandomSpawn",
+                    "returnType": "Vector3",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "bullionDistribution",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "rubyDistribution",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "coinPrefab",
+                    "type": "GameObject",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "rubyPrefab",
+                    "type": "GameObject",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "bullionPrefab",
+                    "type": "GameObject",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "coinObjects",
+                    "type": "List<GameObject>",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "spawnRadius",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "DataEntry",
+            "fullName": "DataEntry",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "GetName",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "GatherData",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "UploadScore",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "winnerScore",
+                    "type": "Int32",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "winnerIdentifier",
+                    "type": "Int32",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "winnerRole",
+                    "type": "String",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "winnerName",
+                    "type": "String",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "nameInputField",
+                    "type": "InputField",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "apiUrl",
+                    "type": "String",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "DisableOnGameOver",
+            "fullName": "DisableOnGameOver",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "GameOver",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "listToDisable",
+                    "type": "MonoBehaviour[]",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "GameDetails",
+            "fullName": "GameDetails",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [
+                {
+                    "name": "Instance",
+                    "type": "GameDetails",
+                    "visibility": "public",
+                    "canRead": true,
+                    "canWrite": true,
+                    "isAbstract": false
+                },
+                {
+                    "name": "TotalScore",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "canRead": true,
+                    "canWrite": true,
+                    "isAbstract": false
+                }
+            ],
+            "methods": [
+                {
+                    "name": "AddPoints",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "points",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "SetWinner",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "p",
+                            "type": "player",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Awake",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "<Instance>k__BackingField",
+                    "type": "GameDetails",
+                    "visibility": "private",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "worldWidth",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "worldHeight",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "totalCoins",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "winner",
+                    "type": "player",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "totalScore",
+                    "type": "Int32",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "player",
+            "fullName": "GameDetails+player",
+            "baseClass": "Enum",
+            "interfaces": [
+                "IFormattable",
+                "IComparable",
+                "IConvertible"
+            ],
+            "isAbstract": false,
+            "isSealed": true,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "value__",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "Monster",
+                    "type": "player",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "Human",
+                    "type": "player",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "Undecided",
+                    "type": "player",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "GameManager",
+            "fullName": "GameManager",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [
+                {
+                    "name": "Instance",
+                    "type": "GameManager",
+                    "visibility": "public",
+                    "canRead": true,
+                    "canWrite": true,
+                    "isAbstract": false
+                }
+            ],
+            "methods": [
+                {
+                    "name": "Awake",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "RandomizeRoles",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "SpawnObjects",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "QuitGame",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "<Instance>k__BackingField",
+                    "type": "GameManager",
+                    "visibility": "private",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "playerRoles",
+                    "type": "Dictionary<Int32, String>",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "playerObject",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "monsterObject",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "ladderObject",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "GameState",
+            "fullName": "GameState",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [
+                {
+                    "name": "Instance",
+                    "type": "GameState",
+                    "visibility": "public",
+                    "canRead": true,
+                    "canWrite": true,
+                    "isAbstract": false
+                }
+            ],
+            "methods": [
+                {
+                    "name": "Awake",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Start",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnWorldGenerated",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnTorchesRemoved",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnItemsDistributed",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnRolesRandomized",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnPlayersSpawned",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnLoadingScreenHidden",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnStartGame",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnGameOver",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnScoreSubmitted",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "currentGamePhase",
+                    "type": "GamePhase",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "<Instance>k__BackingField",
+                    "type": "GameState",
+                    "visibility": "private",
+                    "isStatic": true,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "GamePhase",
+            "fullName": "GameState+GamePhase",
+            "baseClass": "Enum",
+            "interfaces": [
+                "IFormattable",
+                "IComparable",
+                "IConvertible"
+            ],
+            "isAbstract": false,
+            "isSealed": true,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "value__",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "Loading",
+                    "type": "GamePhase",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "Playing",
+                    "type": "GamePhase",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "GameOver",
+                    "type": "GamePhase",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "GrowingTreeElement",
+            "fullName": "GrowingTreeElement",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "RemoveCorners",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "posX",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "negX",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "posZ",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "negZ",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "posXPosZ",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "negXNegZ",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "negXPosZ",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "posXNegZ",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "IgnoreLayer",
+            "fullName": "IgnoreLayer",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Start",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Update",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "mask",
+                    "type": "LayerMask",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "EventManager",
+            "fullName": "EventManager",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "generateWorld",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "worldGenerated",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "removeTorches",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "torchesRemoved",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "distributeItems",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "itemsDistributed",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "randomizeRoles",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "rolesRandomized",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "spawnPlayers",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "playersSpawned",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "hideLoadingScreen",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "loadingScreenHidden",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "startGame",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "showEndScreen",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "gameOver",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "scoreSubmitted",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "stopGame",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "GivePoints",
+                    "type": "Action<String, Int32>",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "LevelConstructed",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "LevelLoaded",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "DataGathered",
+                    "type": "Action",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "NameChanged",
+                    "type": "Action<String>",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "GivePoints",
+            "fullName": "GivePoints",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [
+                "IInteractable"
+            ],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Interact",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": true,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "interactor",
+                            "type": "GameObject",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "GetPrompt",
+                    "returnType": "String",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "objectName",
+                    "type": "String",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "points",
+                    "type": "Int32",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "Interactor",
+            "fullName": "Interactor",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Update",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "interactRange",
+                    "type": "Single",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "interactableMask",
+                    "type": "LayerMask",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "playerScript",
+                    "type": "PlayerMovement",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "uIManager",
+                    "type": "UIManager",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "LadderExit",
+            "fullName": "LadderExit",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [
+                "IInteractable"
+            ],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Interact",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": true,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "interactor",
+                            "type": "GameObject",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                }
+            ],
+            "fields": []
+        },
+        {
+            "namespace": "Global",
+            "name": "PlayerKill",
+            "fullName": "PlayerKill",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [
+                "IInteractable"
+            ],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Interact",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": true,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "interactor",
+                            "type": "GameObject",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "GetPrompt",
+                    "returnType": "String",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": []
+        },
+        {
+            "namespace": "Global",
+            "name": "MainMenuScript",
+            "fullName": "MainMenuScript",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Play",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Lobby",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Quit",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "HowToPlay",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "menu",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "lobby",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "player1ChangedName",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "player2ChangedName",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "MonsterBreathing",
+            "fullName": "MonsterBreathing",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Start",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Breath",
+                    "returnType": "IEnumerator",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "breathClips",
+                    "type": "AudioClip[]",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "audioSource",
+                    "type": "AudioSource",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "NameFieldScript",
+            "fullName": "NameFieldScript",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "GetName",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": []
+        },
+        {
+            "namespace": "Global",
+            "name": "PlayerCamera",
+            "fullName": "PlayerCamera",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "SetupCamera",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Start",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Update",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "playerMovement",
+                    "type": "PlayerMovement",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "sensX",
+                    "type": "Single",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "sensY",
+                    "type": "Single",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "orientation",
+                    "type": "Transform",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "xRotation",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "yRotation",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "lookAction",
+                    "type": "InputAction",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "PlayerMovement",
+            "fullName": "PlayerMovement",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Awake",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "GetInputActions",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Update",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Interact",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Debugging",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Animate",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "FixedUpdate",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "MyInput",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "MovePlayer",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "SpeedControl",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "playerNumber",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "role",
+                    "type": "String",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "moveSpeed",
+                    "type": "Single",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "cameraObject",
+                    "type": "GameObject",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "currentTarget",
+                    "type": "IInteractable",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "logInteractableObject",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "logInputActions",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "animator",
+                    "type": "Animator",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "orientation",
+                    "type": "Transform",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "horizontalInput",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "verticalInput",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "moveInputAction",
+                    "type": "InputAction",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "moveDirection",
+                    "type": "Vector3",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "interactInputAction",
+                    "type": "InputAction",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "interactInput",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "rb",
+                    "type": "Rigidbody",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "PlayerSteps",
+            "fullName": "PlayerSteps",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Start",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Step",
+                    "returnType": "IEnumerator",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "stepsClips",
+                    "type": "AudioClip[]",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "audioSource",
+                    "type": "AudioSource",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "rb",
+                    "type": "Rigidbody",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "ScoreSubmitter",
+            "fullName": "ScoreSubmitter",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "SubmitScore",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "type": "String",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "role",
+                            "type": "String",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "score",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "SendScoreToDB",
+                    "returnType": "IEnumerator",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "username",
+                            "type": "String",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "role",
+                            "type": "String",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "score",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                }
+            ],
+            "fields": [
+                {
+                    "name": "phpUrl",
+                    "type": "String",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "ScreenDebug",
+            "fullName": "ScreenDebug",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Start",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Update",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": []
+        },
+        {
+            "namespace": "Global",
+            "name": "TorchEffect",
+            "fullName": "TorchEffect",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Start",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "ChangeLight",
+                    "returnType": "IEnumerator",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Update",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "minTime",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "maxTime",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "minLight",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "maxLight",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "light",
+                    "type": "Light",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "UIManager",
+            "fullName": "UIManager",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "PlaceCrosshairs",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "Update",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "HideLoadingScreen",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "ShowEndScreen",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "loadingScreen",
+                    "type": "GameObject",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "endScreen",
+                    "type": "GameObject",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "crosshairPrefabLeft",
+                    "type": "GameObject",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "crosshairPrefabRight",
+                    "type": "GameObject",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "winnerText",
+                    "type": "TextMeshProUGUI",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "scoreText",
+                    "type": "TextMeshProUGUI",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "isIndicating",
+                    "type": "Boolean[]",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "WorldGenerationGrowingTreeImproved",
+            "fullName": "WorldGenerationGrowingTreeImproved",
+            "baseClass": "MonoBehaviour",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "GenerateWorld",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "ConnectCells",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "c",
+                            "type": "GameObject",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "cell",
+                            "type": "GameObject",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "x",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "y",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "RemoveTorches",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "RemoveUndecided",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "RemoveCorners",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": []
+                },
+                {
+                    "name": "OnEnable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                },
+                {
+                    "name": "OnDisable",
+                    "returnType": "Void",
+                    "visibility": "private",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "minimalMapSize",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "connectionChance",
+                    "type": "Int32",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "protoWorld",
+                    "type": "GameObject[]",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "element",
+                    "type": "GameObject",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "torchRemovalChance",
+                    "type": "Single",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "activeList",
+                    "type": "List<GameObject>",
+                    "visibility": "private",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "MonoScriptData",
+            "fullName": "UnitySourceGeneratedAssemblyMonoScriptTypes_v1+MonoScriptData",
+            "baseClass": "ValueType",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": true,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": [
+                {
+                    "name": "FilePathsData",
+                    "type": "Byte[]",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "TypesData",
+                    "type": "Byte[]",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "TotalTypes",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "TotalFiles",
+                    "type": "Int32",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                },
+                {
+                    "name": "IsEditorOnly",
+                    "type": "Boolean",
+                    "visibility": "public",
+                    "isStatic": false,
+                    "isReadOnly": false
+                }
+            ]
+        },
+        {
+            "namespace": "Global",
+            "name": "__StaticArrayInitTypeSize=798",
+            "fullName": "<PrivateImplementationDetails>+__StaticArrayInitTypeSize=798",
+            "baseClass": "ValueType",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": true,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": []
+        },
+        {
+            "namespace": "Global",
+            "name": "__StaticArrayInitTypeSize=1170",
+            "fullName": "<PrivateImplementationDetails>+__StaticArrayInitTypeSize=1170",
+            "baseClass": "ValueType",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": true,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": []
+        },
+        {
+            "namespace": "Unity.Entities.CodeGeneratedRegistry",
+            "name": "AssemblyTypeRegistry",
+            "fullName": "Unity.Entities.CodeGeneratedRegistry.AssemblyTypeRegistry",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Equals",
+                    "returnType": "Boolean",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "lhs",
+                            "type": "Object",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "rhs",
+                            "type": "Object",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "typeIndex",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Equals",
+                    "returnType": "Boolean",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "lhs",
+                            "type": "Object",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "rhs",
+                            "type": "Void*",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "typeIndex",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "BoxedGetHashCode",
+                    "returnType": "Int32",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "val",
+                            "type": "Object",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "typeIndex",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                },
+                {
+                    "name": "SetSharedStaticTypeIndices",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": true,
+                    "parameters": [
+                        {
+                            "name": "pTypeInfos",
+                            "type": "Int32*",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        },
+                        {
+                            "name": "count",
+                            "type": "Int32",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                }
+            ],
+            "fields": [
+                {
+                    "name": "TypeRegistry",
+                    "type": "TypeRegistry",
+                    "visibility": "public",
+                    "isStatic": true,
+                    "isReadOnly": true
+                },
+                {
+                    "name": "Value0",
+                    "type": "ConstantData0",
+                    "visibility": "private",
+                    "isStatic": true,
+                    "isReadOnly": true
+                }
+            ]
+        },
+        {
+            "namespace": "Unity.Entities.CodeGeneratedRegistry",
+            "name": "ConstantData0",
+            "fullName": "Unity.Entities.CodeGeneratedRegistry.AssemblyTypeRegistry+ConstantData0",
+            "baseClass": "ValueType",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": true,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": []
+        },
+        {
+            "namespace": "Global",
+            "name": "__UnmanagedPostProcessorOutput__1221673671587648887",
+            "fullName": "__UnmanagedPostProcessorOutput__1221673671587648887",
+            "baseClass": "",
+            "interfaces": [],
+            "isAbstract": false,
+            "isSealed": false,
+            "isStatic": false,
+            "properties": [],
+            "methods": [],
+            "fields": []
+        }
+    ],
+    "interfaces": [
+        {
+            "namespace": "Global",
+            "name": "IInteractable",
+            "fullName": "IInteractable",
+            "baseInterfaces": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "Interact",
+                    "returnType": "Void",
+                    "visibility": "public",
+                    "isAbstract": false,
+                    "isVirtual": false,
+                    "isStatic": false,
+                    "parameters": [
+                        {
+                            "name": "interactor",
+                            "type": "GameObject",
+                            "isOut": false,
+                            "isRef": false,
+                            "isParams": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
