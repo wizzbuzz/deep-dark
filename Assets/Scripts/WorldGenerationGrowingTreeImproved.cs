@@ -8,26 +8,27 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
     [Header("Map Generation")]
     [SerializeField]
     [Range(0.0f, 1.0f)]
-    private float minimalMapSize = .8f;
+    private float minimalMapSize = .8f; // Minimum fill ratio before accepting the map
     [SerializeField]
     [Range(0, 100)]
-    private int connectionChance = 50;
+    private int connectionChance = 50; // Percent chance to carve extra passages to neighbors
 
     [HideInInspector]
-    public GameObject[,] protoWorld;
+    public GameObject[,] protoWorld; // 2D grid of tile GameObjects
     [SerializeField]
-    private GameObject element;
+    private GameObject element; // Prefab used for each grid cell
     [Range(0.0f, 1.0f)]
     [SerializeField]
     private float torchRemovalChance;
-    private List<GameObject> activeList = new List<GameObject>();
+    private List<GameObject> activeList = new List<GameObject>(); // Frontier cells still being processed
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    // Generates the maze, retrying until enough tiles are carved
     void GenerateWorld() {
         int worldWidth = GameDetails.Instance.worldWidth;
         int worldHeight = GameDetails.Instance.worldHeight;
 
+        // Retry until the map meets the minimum fill ratio
         while (GameObject.FindGameObjectsWithTag("Decided").Length < worldWidth * worldHeight * minimalMapSize)
         {
             ClearPreviousGeneration();
@@ -45,24 +46,25 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
                 }
             }
 
-            // Start at center
+            // Seed the algorithm from the center of the grid
             activeList.Add(protoWorld[worldWidth / 2, worldHeight / 2]);
 
+            // Growing-tree loop: process cells until the frontier is empty
             while (activeList.Count > 0)
             {
-                // Pick random neightbour c
+                // Pick a random cell from the active frontier
                 GameObject c = activeList[Mathf.RoundToInt(Random.Range(0, activeList.Count))];
                 int x = Mathf.RoundToInt(c.transform.position.x / 2);
                 int y = Mathf.RoundToInt(c.transform.position.z / 2);
 
-                // Loop through neighbours
+                // Gather valid cardinal neighbors within bounds
                 List<GameObject> neighbours = new List<GameObject>();
                 if (x - 1 >= 0) neighbours.Add(protoWorld[x - 1, y]);
                 if (x + 1 < worldWidth) neighbours.Add(protoWorld[x + 1, y]);
                 if (y - 1 >= 0) neighbours.Add(protoWorld[x, y - 1]);
                 if (y + 1 < worldHeight) neighbours.Add(protoWorld[x, y + 1]);
 
-                // Find undecided neighbors
+                // Filter to only unvisited neighbors
                 List<GameObject> undecidedNeighbours = new List<GameObject>();
                 foreach (GameObject cell in neighbours)
                 {
@@ -75,24 +77,22 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
                 // If there are undecided neighbors, connect to at least one
                 if (undecidedNeighbours.Count > 0)
                 {
-                    // Always connect to at least one random undecided neighbor
+                    // Guarantee one passage by connecting a random undecided neighbor
                     GameObject firstCell = undecidedNeighbours[Random.Range(0, undecidedNeighbours.Count)];
                     ConnectCells(c, firstCell, x, y);
 
-                    // Only add to active list if not already present
                     if (!activeList.Contains(firstCell))
                     {
                         activeList.Add(firstCell);
                     }
 
-                    // For remaining undecided neighbors, use connectionChance
+                    // Optionally carve extra passages based on connectionChance
                     foreach (GameObject cell in undecidedNeighbours)
                     {
                         if (cell != firstCell && Random.Range(0, 100) < connectionChance)
                         {
                             ConnectCells(c, cell, x, y);
 
-                            // Only add to active list if not already present
                             if (!activeList.Contains(cell))
                             {
                                 activeList.Add(cell);
@@ -101,6 +101,7 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
                     }
                 }
 
+                // Mark current cell as visited and remove from frontier
                 c.transform.tag = "Decided";
                 activeList.Remove(c);
             }
@@ -112,11 +113,12 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
         EventManager.worldGenerated.Invoke();
     }
 
+    // Removes walls between two adjacent cells based on their relative direction
     void ConnectCells(GameObject c, GameObject cell, int x, int y)
     {
         int nx = Mathf.RoundToInt(cell.transform.position.x / 2);
         int ny = Mathf.RoundToInt(cell.transform.position.z / 2);
-        Vector2 orientation = new Vector2(nx, ny) - new Vector2(x, y);
+        Vector2 orientation = new Vector2(nx, ny) - new Vector2(x, y); // Direction from c to cell
         GrowingTreeElement cComp = c.GetComponent<GrowingTreeElement>();
         GrowingTreeElement cellComp = cell.GetComponent<GrowingTreeElement>();
 
@@ -150,6 +152,7 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
         }
     }
 
+    // Randomly destroys torch objects to thin out lighting
     private void RemoveTorches()
     {
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Torch"))
@@ -162,6 +165,7 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
         EventManager.torchesRemoved.Invoke();
     }
 
+    // Destroys all tiles that were never visited during generation
     private void RemoveUndecided()
     {
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Undecided"))
@@ -170,6 +174,7 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
         }
     }
 
+    // Destroys all existing tiles to prepare for a fresh generation pass
     private void ClearPreviousGeneration()
     {
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Decided"))
@@ -182,6 +187,7 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
         }
     }
 
+    // Tells each decided tile to clean up unnecessary corner geometry
     private static void RemoveCorners()
     {
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Decided"))
@@ -190,12 +196,14 @@ public class WorldGenerationGrowingTreeImproved : MonoBehaviour
         }
     }
 
+    // Subscribe to generation events
     void OnEnable()
     {
         EventManager.generateWorld += GenerateWorld;
         EventManager.removeTorches += RemoveTorches;
     }
 
+    // Unsubscribe to prevent leaks
     void OnDisable()
     {
         EventManager.generateWorld -= GenerateWorld;

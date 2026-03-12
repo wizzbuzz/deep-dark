@@ -6,30 +6,43 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    // UI panels for the loading and end-of-match screens
     [SerializeField]
     private GameObject loadingScreen, endScreen;
 
+    // Crosshair objects for the left and right player viewports
     [SerializeField]
     private GameObject crosshairPrefabLeft, crosshairPrefabRight;
 
     [Header("UI Elements")]
+    // Displays the winner label on the end screen
     [SerializeField]
     private TextMeshProUGUI winnerText;
+    // Displays the final score on the end screen
     [SerializeField]
     private TextMeshProUGUI scoreText;
+    // Root object for all in-game HUD elements
     [SerializeField]
     private GameObject ingameUI;
 
     [Header("Tutorial")]
+    // Index of the currently displayed tutorial slide
     [SerializeField] private int tutorialTextPosition = -1;
+    // Panel that contains the tutorial overlay
     [SerializeField] private GameObject tutorialPanel;
+    // Ordered array of tutorial text slides
     [SerializeField] private TextMeshProUGUI[] tutorialTextElements;
 
+    // Whether each player's crosshair is currently in the enlarged indicating state
     public bool[] isIndicating = {false, false};
+    // Input action used to advance tutorial text
     private InputAction interactInputAction;
+    // Cached value of the interact input axis
     private float interactInput;
+    // When true, both crosshairs are centred instead of split to each viewport
     [SerializeField] private bool isSingleplayer = false;
 
+    // Positions each crosshair at the correct screen location for split-screen or single-player
     private void PlaceCrosshairs()
     {
         float middleHeight = Screen.height / 2;
@@ -48,6 +61,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // Resizes crosshairs based on indication state and advances the tutorial on input release
     private void Update()
     {
         crosshairPrefabLeft.GetComponent<RectTransform>().sizeDelta = isIndicating[0] ? new Vector2(4, 4) : new Vector2(2, 2);
@@ -59,17 +73,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // Places crosshairs then deactivates the loading screen
     private void HideLoadingScreen()
     {
         PlaceCrosshairs();
         loadingScreen.SetActive(false);
     }
 
+    // Fetches the interact input action for player 1
     void Start()
     {
         interactInputAction = InputSystem.actions.FindAction("interact" + 1);
     }
 
+    // Unlocks the cursor and populates the end screen with the winner and final score
     private void ShowEndScreen()
     {
         // Unlock the cursor and show the end screen
@@ -77,13 +94,14 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         // Change winner label
-        winnerText.text = GameDetails.Instance.winner != GameDetails.player.Human ? "The Monster eats..." : "The Human escaped!";
+        winnerText.text = GameDetails.Instance.winner != GameDetails.player.Human ? "The Beast wins!" : "The Human escaped!";
 
         scoreText.text = $"Final Score: {MatchData.Instance.endScore}";
 
         endScreen.SetActive(true);
     }
 
+    // Activates the tutorial panel and shows the first slide
     private void ShowTutorial()
     {
         Debug.Log("Showing tutorial.");
@@ -92,6 +110,7 @@ public class UIManager : MonoBehaviour
         tutorialPanel.SetActive(true);
     }
 
+    // Advances to the next tutorial slide, or ends the tutorial if on the last one
     private void NextTutorialText()
     {
         if (tutorialPanel.activeSelf)
@@ -110,6 +129,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // Subscribe to UI-related events when this object becomes active
     void OnEnable()
     {
         EventManager.hideLoadingScreen += HideLoadingScreen;
@@ -119,6 +139,7 @@ public class UIManager : MonoBehaviour
         EventManager.gameOver += HideIngameUI;
     }
 
+    // Unsubscribe from UI-related events when this object is deactivated
     void OnDisable()
     {
         EventManager.hideLoadingScreen -= HideLoadingScreen;
@@ -128,11 +149,13 @@ public class UIManager : MonoBehaviour
         EventManager.gameOver -= HideIngameUI;
     }
 
+    // Hides the in-game HUD
     private void HideIngameUI()
     {
         ingameUI.SetActive(false);
     }
 
+    // Shows the in-game HUD
     private void ShowIngameUI()
     {
         ingameUI.SetActive(true);

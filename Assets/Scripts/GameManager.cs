@@ -6,17 +6,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
-
-
-
 public class GameManager : MonoBehaviour
 {
+    // Global singleton access point for GameManager
     public static GameManager Instance {get; private set;}
+    // Maps player index to their assigned role ("Player" or "Monster")
     public Dictionary<int, string> playerRoles = new Dictionary<int, string>();
+    // Prefabs/objects for the player, monster, and exit ladder
     public GameObject playerObject, monsterObject, ladderObject;
+    // Percentage chance that player 1 gets the Player role (vs Monster)
     public int rChance = 50;
+    // Skips role randomization and monster setup when true
     public bool singlePlayer = false;
     
+    // Enforce a single instance, destroying any duplicate
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Randomly assigns Player and Monster roles to the two controllers, or sets up solo play
     void RandomizeRoles()
     {
         if (!singlePlayer)
@@ -58,6 +62,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Places the player at the lowest room, the ladder at the highest, and the monster at a random room
     void SpawnObjects()
     {
         float lowestPos = math.INFINITY;
@@ -94,10 +99,12 @@ public class GameManager : MonoBehaviour
         EventManager.playersSpawned.Invoke();
     }
 
+    // Return to the main menu scene
     void QuitGame() { 
         SceneManager.LoadScene(0);
     }
 
+    // Subscribe to role, spawn, and stop events when this object becomes active
     void OnEnable()
     {
         EventManager.randomizeRoles += RandomizeRoles;
@@ -105,6 +112,7 @@ public class GameManager : MonoBehaviour
         EventManager.stopGame += QuitGame;
     }
 
+    // Unsubscribe from role, spawn, and stop events when this object is deactivated
     void OnDisable()
     {
         EventManager.randomizeRoles -= RandomizeRoles;

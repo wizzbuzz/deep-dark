@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class MonsterBreathing : MonoBehaviour
 {
+    // Collection of breathing sound clips to play randomly
     [SerializeField]
     private AudioClip[] breathClips;
+    // AudioSource used to play the breathing clips
     private AudioSource audioSource;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Cache the AudioSource and begin the breathing loop
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -15,6 +17,7 @@ public class MonsterBreathing : MonoBehaviour
         StartCoroutine(Breath());
     }
 
+    // Plays a random breath clip at random intervals between 4 and 6 seconds, indefinitely
     IEnumerator Breath()
     {
         while (true)

@@ -228,7 +228,7 @@
     "m_ShaderOutputName": "Min",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.0,
+        "x": 0.00009999999747378752,
         "y": 0.0,
         "z": 0.0,
         "w": 0.0

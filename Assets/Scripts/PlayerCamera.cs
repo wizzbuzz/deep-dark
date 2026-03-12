@@ -51,8 +51,8 @@ public class PlayerCamera : MonoBehaviour
             // Read mouse/controller input
             Vector2 lookValue = lookAction.ReadValue<Vector2>();
 
-            float mouseX = lookValue.x * Time.deltaTime * sensX;
-            float mouseY = lookValue.y * Time.deltaTime * sensY;
+            float mouseX = lookValue.x * sensX;
+            float mouseY = lookValue.y * sensY;
 
             // Calculate rotation with vertical clamping
             yRotation += mouseX;
